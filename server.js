@@ -28,9 +28,21 @@ function start() {
         "View departments",
         "View roles",
         "View employees",
-        "Search for a specific song",
         "exit"
       ]
-    })
+    }).then(function(answer) {
+        if (answer === 'View departments') {
+            viewDepartments();
+        } else if (answer === 'View roles') {
+            viewRoles();
+        } else if (answer === 'View employees') {
+            viewEmployees();
+        } else {
+            connection.end();
+        }
+    });
+}
 
+function viewEmployees() {
+    const query = 'SELECT * FROM '
 }
